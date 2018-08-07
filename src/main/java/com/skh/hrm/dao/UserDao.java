@@ -8,6 +8,9 @@ import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.SelectProvider;
 
+import java.util.List;
+import java.util.Map;
+
 /**
  * Created by skh on 2018/8/6.
  */
@@ -24,4 +27,12 @@ public interface UserDao {
     @SelectProvider(type = UserDynaSqlProvider.class, method = "updateUser")
     void update(User user);
 
+    @SelectProvider(type = UserDynaSqlProvider.class, method = "selectWithParam")
+    List<User> selectByPage(Map<String, Object> param);
+
+    @SelectProvider(type = UserDynaSqlProvider.class, method = "count")
+    Integer count(Map<String, Object> param);
+
+    @SelectProvider(type = UserDynaSqlProvider.class, method = "insertUser")
+    void save(User user);
 }
