@@ -21,7 +21,7 @@ public interface DeptDao {
     Dept selectById(Integer id);
 
     @Delete("delete from" + HrmConstants.DEPTTABLE + "where id=#{id}")
-    void deleteByID(Integer id);
+    void deleteById(Integer id);
 
     @SelectProvider(type = DeptDynaSqlProvider.class, method = "updateDept")
     void update(Dept dept);

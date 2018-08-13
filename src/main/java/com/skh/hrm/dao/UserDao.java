@@ -22,7 +22,7 @@ public interface UserDao {
     User selectById(Integer id);
 
     @Delete("delete from" + HrmConstants.USERTABLE + "where id=#{id}")
-    void deleteByID(Integer id);
+    void deleteById(Integer id);
 
     @SelectProvider(type = UserDynaSqlProvider.class, method = "updateUser")
     void update(User user);
