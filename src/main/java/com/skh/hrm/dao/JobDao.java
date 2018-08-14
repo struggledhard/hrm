@@ -4,6 +4,7 @@ import com.skh.hrm.common.HrmConstants;
 import com.skh.hrm.dao.provider.JobDynaSqlProvider;
 import com.skh.hrm.domain.Job;
 import org.apache.ibatis.annotations.Delete;
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.SelectProvider;
 
@@ -14,6 +15,7 @@ import java.util.Map;
  * Created by skh on 2018/8/13.
  *
  */
+@Mapper
 public interface JobDao {
     @Select("select * from "+HrmConstants.JOBTABLE +" where ID = #{id}")
     Job selectById(int id);

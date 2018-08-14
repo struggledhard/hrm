@@ -1,5 +1,8 @@
 package com.skh.hrm.domain;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import org.springframework.format.annotation.DateTimeFormat;
+
 import java.io.Serializable;
 import java.util.Date;
 
@@ -13,6 +16,8 @@ public class User implements Serializable {
     private String loginName;   // 登录名
     private String password;    // 密码
     private Integer status;     // 状态
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    @JsonFormat(pattern = "yyyy-MM-dd")
     private Date createDate;    // 创建日期
 
     public Integer getId() {

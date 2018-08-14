@@ -12,6 +12,7 @@ import java.util.Map;
 /**
  * Created by skh on 2018/8/13.
  */
+@Mapper
 public interface EmployeeDao {
     // 根据参数查询员工总数
     @SelectProvider(type=EmployeeDynaSqlProvider.class,method="count")

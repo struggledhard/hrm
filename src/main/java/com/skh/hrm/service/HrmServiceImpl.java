@@ -4,6 +4,7 @@ import com.skh.hrm.common.PageModel;
 import com.skh.hrm.dao.*;
 import com.skh.hrm.domain.*;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Isolation;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
@@ -16,6 +17,7 @@ import java.util.Map;
  * Created by skh on 2018/8/13.
  */
 @Transactional(propagation = Propagation.REQUIRED, isolation = Isolation.DEFAULT)
+@Service
 public class HrmServiceImpl implements HrmService {
     /**
      * 自动注入持久层Dao对象

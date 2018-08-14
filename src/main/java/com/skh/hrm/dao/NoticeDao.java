@@ -12,6 +12,7 @@ import java.util.Map;
 /**
  * Created by skh on 2018/8/13.
  */
+@Mapper
 public interface NoticeDao {
     // 动态查询
     @SelectProvider(type=NoticeDyanSqlProvider.class,method="selectWhitParam")
